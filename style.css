@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: hsl(0, 0%, 98%);
+    color: hsl(200, 15%, 8%);
+}
+
+main{
+    position: relative;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(0, 0%, 100%);
+    padding: 15px 50px;
+    box-shadow: 3px 3px 5px grey;
+}
+
+.dark_mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.dark_mode .fa-solid{
+    display: none;
+}
+
+.section_1{
+    display: flex;
+    justify-content: space-between;
+    padding:0 50px;
+    margin-top: 50px;
+}
+
+.input_field{
+    background-color: hsl(0, 0%, 100%);
+    width: 30%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 3px 3px 5px grey;
+    border-radius: 4px;
+    gap: 5px;
+}
+
+
+.search_input{
+    width: 100%;
+    padding: 10px  10px  10px 5px;
+    border: none;
+    outline: none;
+}
+
+.filter_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+   align-items: flex-start;
+   
+}
+
+.filter_head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: hsl(0, 0%, 100%);
+    padding: 10px 20px;
+    border-radius: 4px;
+    width: 180px;
+    box-shadow: 3px 3px 5px grey;
+    cursor: pointer;
+}
+
+.region_list{
+    display: none;
+}
+
+.filter_container ul{
+    background-color: hsl(0, 0%, 100%);
+    padding: 10px 20px;
+    border-radius: 4px;
+    width: 180px;
+    margin-top: 5px;
+    box-shadow: 3px 3px 5px grey;
+    cursor: pointer;
+    position: absolute;
+}
+
+.toggle_filter_container{
+    display: block;
+}
+
+.filter_container li{
+    list-style-type: none;
+    padding: 5px 0;
+}
+
+.section_2{
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+
+.card_container{
+    background-color: hsl(0, 0%, 100%);
+    margin-bottom: 20px;
+    border-radius: 10px;
+  
+}
+
+.country_img_container img{
+    width: 100%;
+   height: 250px;
+   border-radius: 10px 10px 0 0;
+   overflow: hidden;
+   object-fit: cover;
+}
+
+.country_details{
+    padding: 20px;
+}
+
+.country_details h3{
+    padding-bottom: 20px;
+}
+
+.country_details p{
+    padding-bottom: 10px ;
+}
+
+
+.country_big_details_container{
+    padding: 50px;
+    background-color: hsl(0, 0%, 100%);
+    position: fixed;
+    top: 75px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+
+.back_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    box-shadow: 3px 3px 5px grey;
+    border-radius: 4px;
+    width: 8%;
+    margin-bottom: 50px;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.country_big_details{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+}
+
+
+.country_big_details_img_container img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  
+}
+
+.country_big_details h3{
+  padding-bottom: 30px;
+}
+
+.other_country_detail{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   gap: 10px 50px;
+
+}
+
+.border_countries{
+    padding-top: 40px;
+}
+
+/* .border_countries_borders{
+    box-shadow: 3px 3px 5px grey;
+    border-radius: 4px;
+    background-color: transparent;
+    padding: 5px 10px;
+    margin-left: 5px;
+} */
+
+
+
+/* Dark Mode Start. */
+body.dark  .header, body.dark main, body.dark .input_field, body.dark .filter_head, body.dark .filter_container ul, body.dark .country_big_details_container, body.dark .back_btn, body.dark .search_input
+{
+    background-color: hsl(209, 23%, 22%);
+    color:hsl(0, 0%, 100%) ;
+}
+
+body.dark  .header, body.dark .input_field, body.dark .filter_head,body.dark .filter_container ul, body.dark .back_btn 
+{
+    box-shadow: 3px 3px 5px hsl(207, 26%, 17%);
+}
+
+body.dark .card_container{
+    color:hsl(0, 0%, 100%) ;
+    background-color: hsl(207, 26%, 17%);
+}
+
+
+body.dark .fa-solid {
+    display:block;
+}
+
+body.dark .fa-regular  {
+    display: none;
+}
+
+/* Dark Mode End. */
+
+
+/* Responsiveness */
+@media screen and (max-width: 1030px) {
+    .section_2{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .back_btn{
+        width: 15%;
+    }
+
+
+}
+
+
+@media screen and (max-width: 800px) {
+    .section_2{
+        padding: 30px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .back_btn{
+        width: 12%;
+    }
+
+    .country_big_details_img_container img{
+        height: 400px;
+    }
+    
+    .country_big_details h3{
+      padding-bottom: 30px;
+    }
+    
+    .other_country_detail{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    
+    }
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .header{
+        padding: 15px 20px;
+    }
+
+    .header h1{
+        font-size: 18px;
+        font-weight: 900;
+    }
+    
+    .dark_mode p{
+        font-size: 12px;
+   
+    }
+
+
+    .section_1{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding:0 10px;
+        margin-top: 30px;
+        gap: 30px;
+    }
+
+    .input_field{
+        width: 100%;
+    }
+
+    .section_2{
+        margin-top: 20px;
+        padding: 20px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* country more details responsive styling */
+    .country_big_details_container{
+        padding: 20px;
+    }
+
+
+    .back_btn{
+        width: 28%;
+    }
+
+    .country_big_details{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+
+    .country_big_details_container{
+        overflow-y: scroll;
+        top: 55px;
+    }
+
+    .country_big_details_img_container img{
+        height: 250px;
+      
+    }
+
+
+    .other_country_detail{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+    .header{
+        padding: 15px 10px;
+    }
+
+  
+}
